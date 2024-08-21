@@ -1,0 +1,18 @@
+[run]
+source =
+    chess
+    test
+omit =
+    venv/*
+    */test*
+[report]
+exclude_lines =
+    pragma: no cover
+    def setUp
+    def test_
+    return raw_input
+    print
+    if __name__ == '__main__':
+    def suite
+    __str__
+    main()
