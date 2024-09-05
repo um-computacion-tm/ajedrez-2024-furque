@@ -1,7 +1,7 @@
 WHITE = 'White'
 BLACK = 'Black'
 symbolDictionary = {
-    BLACK: {
+    WHITE: {
         'Pawn': "♙",
         'Rook': "♖",
         'Knight': "♘",
@@ -9,7 +9,7 @@ symbolDictionary = {
         'King': "♔",
         'Queen': "♕"
     },
-    WHITE: {
+    BLACK: {
         'Pawn': "♟",
         'Rook': "♜",
         'Knight': "♞",

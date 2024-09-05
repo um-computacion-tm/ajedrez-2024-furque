@@ -14,13 +14,19 @@ class testpieces(unittest.TestCase):
         self.white_rook = Rook(WHITE, 'a1', self.board)
         self.white_pawn = Pawn(WHITE, 'e2', self.board)
         self.black_pawn = Pawn(BLACK, 'f5', self.board)
-
       
     def test_kingmovement(self):
         # tests that king can move in every direction but only one place.
-        self.assertTrue(self.white_king.move('f2'))
+        self.assertTrue(self.white_king.valid_moves('f2'))
         self.assertEqual(self.white_king.position, 'd2')
-        self.assertFalse(self.white_king.move('h4'))      
+        self.assertFalse(self.white_king.valid_moves('h4'))    
+
+    def test_Dama_movimiento(self):
+        self.assertTrue(self.white_queen.valid_moves('a4', self.board))
+        self.assertEqual(self.white_queen.position, 'a4')
+        
+        self.assertFalse(self.white_queen.valid_moves('h6', self.board))
+        self.assertEqual(self.white_queen.position, 'a4')
    
 if __name__ == '__main__':
     unittest.main()
