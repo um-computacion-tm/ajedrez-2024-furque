@@ -21,12 +21,21 @@ class testpieces(unittest.TestCase):
         self.assertEqual(self.white_king.position, 'd2')
         self.assertFalse(self.white_king.valid_moves('h4'))    
 
-    def test_Dama_movimiento(self):
+    def test_queenmovement(self):
         self.assertTrue(self.white_queen.valid_moves('a4', self.board))
         self.assertEqual(self.white_queen.position, 'a4')
         
         self.assertFalse(self.white_queen.valid_moves('h6', self.board))
         self.assertEqual(self.white_queen.position, 'a4')
+
+    def test_rook_verticalmove(self):
+        posiciones = self.white_rook.valid_moves((5, 0))
+        self.assertIn((5, 0), posiciones)
+        self.assertIn((4, 0), posiciones)
+   
+    def test_rook_horizontalmove(self):
+        posiciones = self.white_rook.valid_moves((0, 5))
+        self.assertIn((0, 5), posiciones)
    
 if __name__ == '__main__':
     unittest.main()
