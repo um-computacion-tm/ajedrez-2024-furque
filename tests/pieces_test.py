@@ -37,5 +37,9 @@ class testpieces(unittest.TestCase):
         posiciones = self.white_rook.valid_moves((0, 5))
         self.assertIn((0, 5), posiciones)
    
+    def test_knightmove(self):
+        self.assertTrue(self.white_knight.valid_moves(2, 2)))
+        self.asserttalse(self.white_knight.valid_moves((3, 3)))
+
 if __name__ == '__main__':
     unittest.main()
