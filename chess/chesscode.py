@@ -56,15 +56,15 @@ class Game:
         start_col, start_row = start_position
         end_col, end_row = new_position
         target_piece = self.get_target_piece(new_position)
-        path = piece.check_move(new_position)
-        if path and self.__board__.check_path(piece, path) and self.__board__.place_piece(piece, new_position):
+        path = piece.can_move(new_position)
+        if path and self.__board__.can_move(piece, path) and self.__board__.place_piece(piece, new_position):
             self.__board__.place_piece(piece, new_position)
             if target_piece:
                 self.__pieces__.remove(target_piece)
 
             self.__move_count__ += 1
             if isinstance(piece, Pawn):
-                piece.__moved__ = True
+                piece.has_moved = True
             return True
         else:
             piece.set_position((start_col, start_row))
