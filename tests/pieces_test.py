@@ -49,5 +49,12 @@ class testpieces(unittest.TestCase):
         self.assertFalse(self.white_knight.valid_moves('b1'))
         self.assertEqual(self.white_knight.position, 'b2')
 
+    def test_pawnmove(self):
+        self.assertTrue(self.white_pawn.valid_moves('d1', self.board))
+        self.assertEqual(self.white_pawn.position, 'd2')
+
+        self.assertFalse(self.white_pawn.valid_moves('b1'))
+        self.assertEqual(self.white_pawn.position, 'b2')
+
 if __name__ == '__main__':
     unittest.main()
