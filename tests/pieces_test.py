@@ -57,11 +57,11 @@ class testpieces(unittest.TestCase):
         self.assertEqual(self.white_pawn.position, 'b2')
 
     def test_blackpawn(self):
-        self.assertTrue(self.black_pawn.valid_moves('d7', self.board))
-        self.assertEqual(self.black_pawn.position, 'd8')
+        self.assertTrue(self.black_pawn.valid_moves('f5', self.board))
+        self.assertEqual(self.black_pawn.position, 'f6')
 
-        self.assertFalse(self.black_pawn.valid_moves('b1'))
-        self.assertEqual(self.black_pawn.position, 'b2')
+        self.assertFalse(self.black_pawn.valid_moves('f5'))
+        self.assertEqual(self.black_pawn.position, 'f4')
 
 if __name__ == '__main__':
     unittest.main()
