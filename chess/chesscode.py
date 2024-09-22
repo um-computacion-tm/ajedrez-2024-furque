@@ -33,7 +33,7 @@ class Game:
 
     def place_pieces_on_board(self):
         for piece in self.__pieces__:
-            self.__board__.place_piece_on_initialization(piece)
+            self.__board__.place_piece(piece)
 
     def get_piece(self, position):  # Given a position, returns the piece at that position if the position is valid
         col, row = position
@@ -45,7 +45,7 @@ class Game:
     def get_target_piece(self, position):
         col, row = position
         for piece in self.__pieces__:
-            if (piece.col == col and piece.row == row) and piece.color != self.__current_turn__:
+            if (piece.col == col and piece.row == row) and piece. != self.__current_turn__:
                 return piece
         return False
 
@@ -56,8 +56,8 @@ class Game:
         start_col, start_row = start_position
         end_col, end_row = new_position
         target_piece = self.get_target_piece(new_position)
-        path = piece.can_move(new_position)
-        if path and self.__board__.can_move(piece, path) and self.__board__.place_piece(piece, new_position):
+        path = piece.move_piece(new_position)
+        if path and self.__board__.move_piece(piece, path) and self.__board__.place_piece(piece, new_position):
             self.__board__.place_piece(piece, new_position)
             if target_piece:
                 self.__pieces__.remove(target_piece)
@@ -67,7 +67,7 @@ class Game:
                 piece.has_moved = True
             return True
         else:
-            piece.set_position((start_col, start_row))
+            piece.position((start_col, start_row))
             return False
 
     def process_input(self):

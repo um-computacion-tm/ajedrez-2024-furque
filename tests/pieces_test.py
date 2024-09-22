@@ -29,17 +29,39 @@ class testpieces(unittest.TestCase):
         self.assertEqual(self.white_queen.position, 'a4')
 
     def test_rook_verticalmove(self):
-        posiciones = self.white_rook.valid_moves((5, 0))
-        self.assertIn((5, 0), posiciones)
-        self.assertIn((4, 0), posiciones)
-   
+        self.assertTrue(self.white_rook.valid_moves('a1', self.board))
+        self.assertEqual(self.white_rook.position, 'a3')
+        
+        self.assertFalse(self.white_rook.valid_moves('a1', self.board))
+        self.assertEqual(self.white_rook.position, 'b1')
+
     def test_rook_horizontalmove(self):
-        posiciones = self.white_rook.valid_moves((0, 5))
-        self.assertIn((0, 5), posiciones)
+        self.assertTrue(self.white_rook.valid_moves('a1', self.board))
+        self.assertEqual(self.white_rook.position, 'b1')
+        
+        self.assertFalse(self.white_rook.valid_moves('a1', self.board))
+        self.assertEqual(self.white_rook.position, 'a2')  
    
     def test_knightmove(self):
-        self.assertTrue(self.white_knight.valid_moves(2, 2)))
-        self.asserttalse(self.white_knight.valid_moves((3, 3)))
+        self.assertTrue(self.white_knight.valid_moves('b1', self.board))
+        self.assertEqual(self.white_knight.position, 'd3')
+
+        self.assertFalse(self.white_knight.valid_moves('b1'))
+        self.assertEqual(self.white_knight.position, 'b2')
+
+    def test_pawnmove(self):
+        self.assertTrue(self.white_pawn.valid_moves('d1', self.board))
+        self.assertEqual(self.white_pawn.position, 'd2')
+
+        self.assertFalse(self.white_pawn.valid_moves('b1'))
+        self.assertEqual(self.white_pawn.position, 'b2')
+
+    def test_blackpawn(self):
+        self.assertTrue(self.black_pawn.valid_moves('f5', self.board))
+        self.assertEqual(self.black_pawn.position, 'f6')
+
+        self.assertFalse(self.black_pawn.valid_moves('f5'))
+        self.assertEqual(self.black_pawn.position, 'f4')
 
 if __name__ == '__main__':
     unittest.main()
