@@ -45,7 +45,7 @@ class Game:
     def get_target_piece(self, position):
         col, row = position
         for piece in self.__pieces__:
-            if (piece.col == col and piece.row == row) and piece. != self.__current_turn__:
+            if (piece.col == col and piece.row == row) and piece.color == self.__current_turn__:
                 return piece
         return False
 
