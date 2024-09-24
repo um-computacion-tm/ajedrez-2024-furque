@@ -31,6 +31,20 @@ class Game:
             Pawn(self.__second_turn_color__, (0, 6)), Pawn(self.__second_turn_color__, (1, 6)),
         ])
 
+
+        self.__pieces__.extend([
+            Pawn(self.__second_turn_color__, (0,6)), Pawn(self.__second_turn_color__, (1,6)),
+            Pawn(self.__second_turn_color__, (2,6)), Pawn(self.__second_turn_color__, (3,6)),
+            Pawn(self.__second_turn_color__, (4,6)), Pawn(self.__second_turn_color__, (5,6)), 
+            Pawn(self.__second_turn_color__, (6,6)), Pawn(self.__second_turn_color__, (7,6)),
+            Rook(self.__second_turn_color__, (0,7)), Rook(self.__second_turn_color__, (7,7)),
+            Knight(self.__second_turn_color__, (1,7)), Knight(self.__second_turn_color__, (6,7)),
+            Bishop(self.__second_turn_color__, (2,7)), Bishop(self.__second_turn_color__, (5,7)),            
+            Queen(self.__second_turn_color__, (3,7)), King(self.__second_turn_color__, (4,7))
+        ])
+
+
+
     def place_pieces_on_board(self):
         for piece in self.__pieces__:
             self.__board__.place_piece(piece)
@@ -45,7 +59,7 @@ class Game:
     def get_target_piece(self, position):
         col, row = position
         for piece in self.__pieces__:
-            if (piece.col == col and piece.row == row) and piece. != self.__current_turn__:
+            if (piece.col == col and piece.row == row) and piece.color == self.__current_turn__:
                 return piece
         return False
 
@@ -67,7 +81,7 @@ class Game:
                 piece.has_moved = True
             return True
         else:
-            piece.position((start_col, start_row))
+            piece.update_position((start_col, start_row))
             return False
 
     def process_input(self):
