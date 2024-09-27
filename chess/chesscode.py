@@ -70,7 +70,7 @@ class Game:
         start_col, start_row = start_position
         end_col, end_row = new_position
         target_piece = self.get_target_piece(new_position)
-        path = piece.move_piece(new_position)
+        path = self.move_piece(new_position)
         if path and self.__board__.move_piece(piece, path) and self.__board__.place_piece(piece, new_position):
             self.__board__.place_piece(piece, new_position)
             if target_piece:
