@@ -1,7 +1,7 @@
 ## [1.2.0] - 2024-10-22
 ### Final version fixes and added Main.py
 - file `chess/main.py`
-- file `tests/board_tests.py`
+- file `chess/pieces.py`
 - file `chess/board.py`
 ## [1.1.5] - 2024-10-21
 ### Deleated files and added final implementations and solutions
