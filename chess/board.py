@@ -8,12 +8,11 @@ class Board:
     def define_pieces(self):
         # Coloca las piezas en sus posiciones iniciales
         self.place_pieces(0, 'white', [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook])
-        self.place_pieces_pawns(1, 'white')  # Descomenta esta línea
+        self.place_pieces_pawns(1, 'white') 
         self.place_pieces(7, 'black', [Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook])
-        self.place_pieces_pawns(6, 'black')  # Descomenta esta línea
+        self.place_pieces_pawns(6, 'black')  
 
     def place_pieces(self, row, color, piece_types):
-        # Coloca una fila específica de piezas (torres, caballos, etc.)
         for i, piece_type in enumerate(piece_types):
             piece = piece_type(i, row, color)
             self.place_piece(piece)
@@ -30,11 +29,9 @@ class Board:
         self.board[y][x] = piece
 
     def move_piece(self, piece, new_x, new_y):
-        # Verifica si hay una pieza en la posición destino
         target_piece = self.get_piece_at(new_x, new_y)
         
         if piece.is_valid_move(new_x, new_y, self):
-            # Si hay una pieza en el destino y es del mismo color, el movimiento no es válido
             if target_piece and target_piece.get_color() == piece.get_color():
                 return False
                 
