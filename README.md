@@ -5,6 +5,24 @@ Step into the world of strategy and intellect with Python Chess Game! This proje
 
 Test your skills, plan your moves, and enjoy the thrill of chess in a modern, digital form. Ready to make your move?
 
+# Requirements:
+
+Python 3.x installed on the system.
+Docker to run the game in a container. Official Docker documentation for installation: Docker.
+Dependencies.
+
+# Features
+
+Board.
+Option to tie the game.
+Chess pieces.
+Movement Validation.
+End of the Game.
+Shift changes.
+Unit Tests.
+Docker support.
+
+
 # CircleCi
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-furque/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-furque/tree/main)
 
