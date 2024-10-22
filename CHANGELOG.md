@@ -15,11 +15,11 @@
 - chesscode
 - positions test
 - board test
-## [1.1.3] - 2024-09-22
+## [1.1.3] - 2024-09-23
 ### Added tests
 - positions test
 - board tests
-## [1.1.2] - 2024-09-21
+## [1.1.2] - 2024-09-22
 ### Modified code
 - file `chess/chesscode.py`
 ## [1.1.1] - 2024-09-21
