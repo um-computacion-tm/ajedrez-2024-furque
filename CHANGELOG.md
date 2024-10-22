@@ -3,7 +3,7 @@
 - file `chess/main.py`
 - file `tests/board_tests.py`
 - file `chess/board.py`
-## [1.1.4] - 2024-10-21
+## [1.1.5] - 2024-10-21
 ### Deleated files and added final implementations and solutions
 - file `tests/positions_test.py`
 - file `tests/board_tests.py`
@@ -11,8 +11,8 @@
 - file `chess/piece.py`
 - file `chess/user.py`
 ## [1.1.4] - 2024-09-27
-### Modified files
--chesscode
+### Modified files 
+- chesscode
 - positions test
 - board test
 ## [1.1.3] - 2024-09-22
