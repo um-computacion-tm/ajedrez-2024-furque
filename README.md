@@ -1,7 +1,7 @@
     # ChessGame!
 ## Joaquin Furque
 # Description
-Step into the world of strategy and intellect with our Python-powered Chess Game! This project, built as part of a university assignment, brings the classic game of chess to life with smooth gameplay and a user-friendly interface. Whether you're a seasoned player or a newcomer, this game offers a fun and challenging experience for all.
+Step into the world of strategy and intellect with Python Chess Game! This project, built as part of a university assignment, brings the classic game of chess to life with smooth gameplay and a user-friendly interface. Whether you're a seasoned player or a newcomer, this game offers a fun and challenging experience for all.
 
 Test your skills, plan your moves, and enjoy the thrill of chess in a modern, digital form. Ready to make your move?
 
