@@ -1,7 +1,7 @@
-from chess import piece
+from chess.piece import Piece
 
 
-class Rook(piece):
+class Rook(Piece):
     white_icon = '♜'
     black_icon = '♖'
 
@@ -11,7 +11,7 @@ class Rook(piece):
     def is_valid_move(self, new_x, new_y, board):
         return self.is_valid_straight_move(new_x, new_y, board)
 
-class Bishop(piece):
+class Bishop(Piece):
     white_icon = '♝'
     black_icon = '♗'
 
@@ -24,7 +24,7 @@ class Bishop(piece):
             return True
         return False
 
-class Pawn(piece):
+class Pawn(Piece):
     white_icon = '♟'
     black_icon = '♙'
 
@@ -106,11 +106,10 @@ class Pawn(piece):
         target_piece = board.get_piece_at(new_x, new_y)
         return target_piece and target_piece.get_color() != self.__color__
 
-    def is_promotion_move(self, new_y):
-        return (self.__color__ == 'white' and new_y == 7) or (self.__color__ == 'black' and new_y == 0)
+   
 
 
-class Knight(piece):
+class Knight(Piece):
     white_icon = '♞'
     black_icon = '♘'
 
@@ -125,7 +124,7 @@ class Knight(piece):
         return (abs(new_x - self.__x__), abs(new_y - self.__y__)) in [(1, 2), (2, 1)]
 
 
-class King(piece):
+class King(Piece):
      white_icon = '♚'
      black_icon = '♔'
 
@@ -141,7 +140,7 @@ class King(piece):
      def is_adjacent_move(self, new_x, new_y):
         return abs(new_x - self.__x__) <= 1 and abs(new_y - self.__y__) <= 1
 
-class Queen(piece):
+class Queen(Piece):
     white_icon = "♛"
     black_icon = "♕"
 
